@@ -222,7 +222,7 @@
         </section>
         <section class=" section tickets">
             <div class="container">
-                <h2 class="underline-title">BUY TICKETS</h2>
+                <h2 class="underline-title tickets-title">BUY TICKETS</h2>
                 <div class="content">
                     <div class="side-image">
                         <img src="./assets/img/tickets-pic.jpg" alt="tickets pic">
@@ -234,14 +234,17 @@
                                     <h4 for="type">
                                         Tickets type
                                     </h4>
-                                    <label>
-                                        <input name="type" value="permanent" type="radio"/>Permanent exhibition
+                                    <label class="ticket-type_container">
+                                        <input name="radio" value="permanent" checked="checked" type="radio"/>Permanent exhibition
+                                        <span class="checkmark"></span>
                                     </label>
-                                    <label>
-                                        <input name="type" value="temporary" type="radio"/>Temporary exhibition
+                                    <label class="ticket-type_container">
+                                        <input name="radio" value="temporary" type="radio"/>Temporary exhibition
+                                        <span class="checkmark"></span>
                                     </label>
-                                    <label>
-                                        <input name="type" value="combined" type="radio"/>Combined Admission
+                                    <label class="ticket-type_container">
+                                        <input name="radio" value="combined" type="radio"/>Combined Admission
+                                        <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="right">
@@ -271,7 +274,10 @@
                     </div>
                 </div>
             </div>
-            
+        </section>
+        <section class="parallax-section">
+            <div class="parallax">
+            </div>
         </section>
         <section class="section contacts-section" id="contacts">
             <div class="container">
