@@ -112,9 +112,9 @@
             </div>
         </section>
         <section class="section video">
-            <div class="video container container">
-                <div class="video_text-block">
-                    <h2 class="section-title video_title title_gold">Video journey</h2>
+            <div class="video-container container">
+                <div class="video-text-block">
+                    <h2 class="video-title">Video journey</h2>
                     <p>
                       Enter and visit one of the most famous museums in the world and
                       enjoy masterpieces such as Mona Lisa or Hammurabi's Code
@@ -127,19 +127,13 @@
                         <img src="./assets/svg/play_large.svg" alt="press it">
                         </button>
                     </div>
-                    <div div class="video-control">
-                        <button class="video-prew">
-                            <img src="./assets/svg/prew.svg" alt="prewious" class="video-prew_link">
-                        </button>
+                    <div class="video-control">
                         <button class="video-play">
                             <img src="./assets/svg/play.svg" alt="play">
                         </button>
-                        <button class="video-next">
-                            <img src="./assets/svg/next.svg" alt="next">
-                        </button>
                         <input type="range" value="0" min="0" max="100" step="1" class="progress video-progress">
                         <button class="video-volume-btn">
-                            <img src="./assets/svg/volume.svg" alt="press it please">
+                            <img src="./assets/svg/volume.svg" alt="volume icon">
                         </button>
                         <input type="range" value="0" min="0" max="100" step="1" class="progress video-volume">
                         <script>
@@ -148,7 +142,7 @@
                             progress.forEach((i) =>
                             i.addEventListener("input", function () {
                             const value = this.value;
-                            this.style.background = `linear-gradient(to right, #24809E 0%, #24809E ${value}%, #fff ${value}%, white 100%)`;
+                            this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #B3B3B3 ${value}%, white 100%)`;
                                 })
                             );
                         </script>
@@ -159,15 +153,44 @@
                 </div>
                 <div class="video-gallery">
                     <div class="video-gallery-left">
-                        <img src="./assets/video/poster3.jpg" alt="poster">
+                        <iframe 
+                            width="452" 
+                            height="254" 
+                            src="https://www.youtube.com/embed/aWmJ5DgyWPI"
+                            loading="lazy" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            title="video left">
+                        </iframe>
                     </div>
                     <div class="video-gallery-middle">
-                        <img src="./assets/video/poster1.jpg" alt="">
+                        <iframe 
+                            width="452" 
+                            height="254" 
+                            src="https://www.youtube.com/embed/Vi5D6FKhRmo"
+                            loading="lazy" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            title="video left">
+                        </iframe>
                     </div>
                     <div class="video-gallery-right">
-                        <img src="./assets/video/poster2.jpg" alt="">
+                        <iframe 
+                            width="452" 
+                            height="254" 
+                            src="https://www.youtube.com/embed/NOhDysLnTvY"
+                            loading="lazy" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            title="right">
+                        </iframe>
                     </div>
                 </div>
+                <div class="video-slider-placeholder">
+                    <img src="./assets/svg/video-slider-placeholder.svg" alt="placeholder">
             </div>
             
         </section>
@@ -338,7 +361,7 @@
                               </div>
                               <div class="elem-group inlined">
                                 <input type="date" id="checkout-date" name="checkout" required>
-                              </div>
+                              </div>    
                               <div class="elem-group">
                                 <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
                               </div>
@@ -362,7 +385,7 @@
                                     <label for="basic">Basic 18+</label>
                                     <div class="number-input">
                                         <button class="button">–</button>
-                                        <input id="basic" name="basic" type="number" min="0" max="99" value="1" readonly="readonly">
+                                        <input id="basic" name="basic" type="number" min="0" max="20" value="1" readonly="readonly">
                                         <button class="button">+</button>
                                      </div>
                                 </div>
@@ -370,7 +393,7 @@
                                     <label for="senior">Senior 65+</label>
                                     <div class="number-input">
                                         <button class="button">–</button>
-                                        <input id="senior" name="senior" type="number" min="0" max="99" value="1" readonly="readonly">
+                                        <input id="senior" name="senior" type="number" min="0" max="20" value="1" readonly="readonly">
                                         <button class="button">+</button>
                                     </div>
                                 </div>
