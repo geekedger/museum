@@ -136,6 +136,11 @@ body {
     color: white;
 }
 
+.container {
+    margin: 0 auto;
+    width: 1440px;
+}
+
 .underline-title {
     position: relative;
   }
@@ -195,42 +200,89 @@ body {
     background-position: left 7px;
 }
 
-.header-list {
+
+.header-nav {
     display: flex;
     flex-wrap: nowrap;
+    gap: 55px;
 }
 
 .header-link {
+    font-family: Roboto;
+    font-style: normal;
     font-weight: 200;
     font-size: 22px;
     line-height: 26px;
     letter-spacing: 2px;
-    text-decoration: none;
-    color: #FFFFFF
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: opacity(0.5);
 }
 
-.container {
-    margin: 0 auto;
-    width: 1440px;
+.header-item {
+
 
 }
+
+
+/* welcome */
+
 .welcome {
     padding-top: 0;
 }
 .welcome-container {
+    height: 810px;
+    width: 1440px;
     display: flex;
+    padding-bottom: 60px;
+    background: url(./assets/img/welcome-background.jpg) no-repeat top right;
+    /* background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(./assets/img/welcome-background.jpg) no-repeat right top; */
+    /* background-position: calc(100% - 20px) calc(100% - 10px); */
+    /* background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%); */
+    /* background-image: linear-gradient(to right, black 0%, transparent 60%), url(./assets/img/welcome-background.jpg) no-repeat top right; */
+} 
 
-    
-    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(./assets/img/welcome-background.jpg) no-repeat right;
-    background-position: calc(100% - 20px) calc(100% - 10px);
-    background-size: 1000px 810px;
-}  
+.welcome-container::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+    margin-top: -100px;
+    height: 810px;
+    width: 100%;
+    content: '';
+
+}
+
+
+.picture-container::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    margin-top: -1490px;
+    height: 360px;
+    width: 100%;
+    content: '';
+    z-index: 99;
+  }
+
+/* .welcome-slider{
+    display: block;
+    position: relative;
+    content: '';
+    height: 810px;
+    width: 1000px;
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(./assets/img/welcome-background.jpg) no-repeat;
+} */
+/* img {
+    height: 200px;
+    width: auto;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* ваш градиент */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* ваш градиент */
+} */
 
 .welcome-right{
     width: 1000px;
     height: 750px;
-
-
 }
 
 .welcome-title {
@@ -278,16 +330,20 @@ body {
     text-align: center;
     letter-spacing: 2px;
     color: #FFFFFF;
+    transition: 0.6s linear;
 
+}
+
+.welcome-link:hover {
+    background-color: var(--font-gold);
 }
 
 /* Visiting */
 
 .visiting-cards {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 75px;
-    column-gap: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 6fr );
+    gap: 60px 75px;
 }
 
 .visiting-card{
@@ -300,8 +356,14 @@ body {
     text-decoration: none;
     
 }
+.card-pic {
+    width: 440px;
+    height: 285px;
+    margin-bottom: 25px;
+}
 
 .visiting-title {
+    margin-bottom: 103px;
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
@@ -332,7 +394,12 @@ body {
     right: 0;
     width: 300px;
     height: 2px;
-    background-color: #710707;;
+    background-color: #710707;
+    transition: 0.7s linear;
+}
+
+.visiting-card:hover .visiting-card-underlined::after {
+    width: 100%;
 }
 
 .visiting-card-desc {
@@ -342,6 +409,8 @@ body {
     font-size: 22px;
     line-height: 26px;
     color: #000000;
+    padding-top: 22px;
+    padding-bottom: 10px;
 }
 
 /* Explore */
@@ -366,6 +435,10 @@ body {
     font-size: 22px;
     line-height: 38px;
     color: #FFFFFF;
+}
+
+.explore-desc p{
+    padding-bottom: 25px;
 }
 
 .explore-title {
@@ -518,8 +591,7 @@ margin: 75px 0;
     height: 2200px;
 }
 .gallery-title {
-    margin: 0;
-    padding-bottom: 75px;
+    padding: 75px 0;
     font-family: 'Forum';
     font-weight: 400;
     font-style: normal;
@@ -532,9 +604,19 @@ margin: 75px 0;
 }
 .picture-container{
     height: 1960px;
-    overflow-y: hidden;
-
+    overflow-y: hidden; 
 }
+.picture-container::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    margin-top: -1490px;
+    height: 360px;
+    width: 100%;
+    content: '';
+  }
+
+
 .picture-inner-container {
     height: 3100px;
     display: flex;
@@ -543,11 +625,13 @@ margin: 75px 0;
     column-gap: 24px;
 }
 
-.picture-inner-container div:first-child {
-    padding-top: 20px;
-}
 .picture-inner-container div:nth-child(3) {
-    padding-top: 20px;
+    padding-top: 50px;
+    margin-bottom: -50px;
+}
+
+.picture-inner-container div:nth-child(6) {
+    padding-top: 50px;
 }
 
 
@@ -597,7 +681,7 @@ margin: 75px 0;
 .elements {
     display: flex;
     justify-content: space-between;
-    height: 341px;
+
 }
 
 .elements label {
@@ -1088,7 +1172,20 @@ h5 {
   justify-content: flex-end;
   gap: 24px;
   padding-bottom: 20px;
+  
 }
+
+.social-links a {
+    display: inline-block;
+    text-align: center;
+    line-height: 52px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #666666;
+
+}
+
 .social-links img {
   transition: 1s linear;
 }
