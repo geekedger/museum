@@ -29,7 +29,7 @@
                             <a href="#gallery" class="header-link">Gallery</a>
                         </li>
                         <li class="header-item">
-                            <a href="tickets" class="header-link">Tickets</a>
+                            <a href="#tickets" class="header-link">Tickets</a>
                         </li>
                         <li class="header-item">
                             <a href="#contacts" class="header-link">Contacts</a>
@@ -49,7 +49,12 @@
                     </p>
                     <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome-link">Discover the Louvre</a>
                 </div> 
-                <div class="welcome-slider">
+                <div class="welcome-right">
+                    <div class="welcome-slider"><img src="./assets/img/welcome-background.jpg" alt="slider pic">
+                    </div>
+                    <div class="slider-nav">
+                        <img src="./assets/img/slider-nav.jpg" alt="slider navigation">
+                    </div>
                 </div> 
             </div>
         </section>
@@ -193,7 +198,7 @@
             </div>
             
         </section>
-        <section class="gallery dark-section" id="gallery">
+        <section class="gallery dark-section" id="inner-gallery">
             <div class="gallery-container container">
                 <h2 class="gallery-title">Art Gallery</h2>
                 <div class="picture-container">
@@ -426,14 +431,14 @@
         }
     </script>
     <script>
-        let imgs = Array.from(Array(15).keys());
+        const imgs = Array.from(Array(15).keys());
         const gallery = document.getElementById('gallery');
         let append = '';
         while (imgs.length) {
             let index = Math.floor(Math.random() * imgs.length);
-            const img = imgs[index];
+            const img = imgs[index]+1;
             imgs.splice(index, 1);        
-            append += `<div ><img src="./assets/img/galery${img+1}.jpg" alt=""></div>`;
+            append += `<div ><img src="./assets/img/galery${img}.jpg" alt=""></div>`;
         }
         gallery.innerHTML = append;
     </script>
