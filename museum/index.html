@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +69,7 @@
                     Virtual tour
                 </h2>
                 <div class="visiting-cards">
-                    <a href="!#" type="button" class="visiting-card" id="myBtnRP">
+                    <a href="https://www.google.com/maps/@48.8606882,2.3356791,3a,90y,328.36h,87.55t/data=!3m7!1e1!3m5!1sAF1QipMZ9YgnArbwEIbTDANeSQYFu9gNqpW_2Sv8FBvY!2e10!3e12!7i4352!8i1815" class="visiting-card">
                         <img class="card-pic" src="./assets/img/royal-place.jpg" alt="Royal Palace">
                         <h3 class="visiting-card-underlined">Royal Palace</h3>
                         <p class="visiting-card-desc">360° Virtual Tour</p>Google Street Panorama View
@@ -109,12 +110,11 @@
                     <h2 class="explore-title underline-title">
                         Picture explore
                     </h2>
-                    <h3 class="explore-desc">
-                        <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading <br> artist of the Spanish Golden Age.</p> 
-                        <p>It was cleaned in 1984 to remove a <span class="text-gold">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p> 
-                        <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>  
-                    </h3>
-
+                    <div class="explore-desc">
+                    <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading <br> artist of the Spanish Golden Age.</p> 
+                    <p>It was cleaned in 1984 to remove a <span class="text-gold">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p> 
+                    <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p> 
+                    </div> 
                 </div>
                 <img class="explore-pic" src="./assets/img/explore-pic-before.jpg" alt="Picture explore">    
             </div>
@@ -161,36 +161,27 @@
                 </div>
                 <div class="video-gallery">
                     <div class="video-gallery-left">
-                        <iframe 
-                            width="452" 
-                            height="254" 
+                        <iframe class="video-gallery-left"
                             src="https://www.youtube.com/embed/aWmJ5DgyWPI"
                             loading="lazy" 
-                            frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
                             title="video left">
                         </iframe>
                     </div>
                     <div class="video-gallery-middle">
-                        <iframe 
-                            width="452" 
-                            height="254" 
+                        <iframe class="video-gallery-left"
                             src="https://www.youtube.com/embed/Vi5D6FKhRmo"
                             loading="lazy" 
-                            frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
                             title="video left">
                         </iframe>
                     </div>
                     <div class="video-gallery-right">
-                        <iframe 
-                            width="452" 
-                            height="254" 
+                        <iframe class="video-gallery-left"
                             src="https://www.youtube.com/embed/NOhDysLnTvY"
                             loading="lazy" 
-                            frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
                             title="right">
@@ -199,8 +190,8 @@
                 </div>
                 <div class="video-slider-placeholder">
                     <img src="./assets/svg/video-slider-placeholder.svg" alt="placeholder">
-            </div>
-            
+                </div>
+            </div>  
         </section>
         <section class="gallery dark-section" id="inner-gallery">
             <div class="gallery-container container">
@@ -219,10 +210,10 @@
                         <img src="./assets/img/tickets-pic.jpg" alt="tickets pic">
                     </div>
                     <div class="ticket-form">
-                        <form action="">
+                        <form>
                             <div class="elements">
                                 <div class="left">
-                                    <h4 for="type">
+                                    <h4>
                                         ticket type
                                     </h4>
                                     <label class="ticket-type_container">
@@ -250,7 +241,7 @@
                                     <label for="senior">Senior 65+
                                     </label>
                                     <div class="number-input">
-                                        <button type="button" class="number-input-button" onclick="this.previousElementSibling.stepUp()">–</button>
+                                        <button type="button" class="number-input-button" onclick="this.nextElementSibling.stepDown()">–</button>
                                         <input id="senior" name="senior" type="number" min="0" max="20" value="1" readonly="readonly">
                                         <button type="button" class="number-input-button" onclick="this.previousElementSibling.stepUp()">+</button>
                                     </div>
@@ -268,6 +259,7 @@
             </div>
         </section>
         <section class="parallax-section">
+            <h2 class="invisible-title">parallax</h2>
             <div class="parallax">
             </div>
         </section>
@@ -349,7 +341,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-container">
-                <form class="form" action="">
+                <form class="form">
                     <div class="form-left">
                         <div class="form-left-top">
                             <h5>
@@ -374,7 +366,7 @@
                                 <input type="tel" id="phone" name="visitor_phone" placeholder="Phone" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
                               </div>
                               <div class="elem-group">
-                                <select id="room-selection" name="room_preference" aria-placeholder="Ticket Type" required>
+                                <select id="room-selection" name="room_preference" required>
                                     <option value="">Choose a ticket</option>
                                     <option value="connecting">Permanent exibition</option>
                                     <option value="adjoining">Temporary exibition</option>
@@ -386,16 +378,16 @@
                                 <div class="input-wrapper">
                                     <label for="basic">Basic 18+</label>
                                     <div class="number-input">
-                                        <button class="button">–</button>
-                                        <input id="basic" name="basic" type="number" min="0" max="20" value="1" readonly="readonly">
-                                        <button type="button" onclick="this.nextElementSibling.stepDown()">+</button>
+                                        <button class="button" onclick="this.nextElementSibling.stepDown()">–</button>
+                                        <input  name="basic" type="number" min="0" max="20" value="1" readonly="readonly">
+                                        <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                      </div>
                                 </div>
                                 <div class="input-wrapper">
                                     <label for="senior">Senior 65+</label>
                                     <div class="number-input">
-                                        <button class="button">–</button>
-                                        <input id="senior" name="senior" type="number" min="0" max="20" value="1" readonly="readonly">
+                                        <button class="button" onclick="this.nextElementSibling.stepDown()">–</button>
+                                        <input name="senior" type="number" min="0" max="20" value="1" readonly="readonly">
                                         <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                     </div>
                                 </div>
@@ -411,49 +403,44 @@
     <div id="myModalSV" class="modal">
         <div class="modal-content">
             <span id="close-button-sv">&times;</span>
-            <iframe src="https://www.google.com/maps/embed?pb=!4v1632772606634!6m8!1m7!1sCAoSLEFGMVFpcE9WeFpRdVN5M0J4OVRfSHBIXzdGdEJIRFRYdkk2U0YtQTEwb2NU!2m2!1d48.86181593314584!2d2.336681797486702!3f81.96095890410959!4f-17.46301369863012!5f0.4000000000000002" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1632772606634!6m8!1m7!1sCAoSLEFGMVFpcE9WeFpRdVN5M0J4OVRfSHBIXzdGdEJIRFRYdkk2U0YtQTEwb2NU!2m2!1d48.86181593314584!2d2.336681797486702!3f81.96095890410959!4f-17.46301369863012!5f0.4000000000000002" style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
     <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-        modal.style.display = "block";
+        function closeModal(modal, close) {
+            modal.style.display = "none";
+            close.onclick = null;
+            modal.onclick = null;
         }
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-        modal.style.display = "none";
+        function openModal(modal, close) {
+            modal.style.display = "block";
+            close.onclick = function() {
+                closeModal(modal, close);
+            }
+            modal.onclick = function(event) {
+                if (event.target != modal) {
+                    return false;
+                }
+                closeModal(modal, close);
+            }
+        }
+
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            openModal(modal, span);
         }
 
         var modalSV = document.getElementById("myModalSV");
         var btnSV = document.getElementById("myBtnSV");
         var spanSV = document.getElementById("close-button-sv");
         btnSV.onclick = function() {
-            modalSV.style.display = "block";
-            return false;
+            openModal(modalSV, spanSV);
         }
-        spanSV.onclick = function() {
-            modalSV.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if ((event.target !== modalSV || event.target !== modal) && (event.target !== btn || event.target !== btnSV)) {
-                modalSV.style.display = "none";
-                modal.style.display = "none";
-                console.log("close");
-            }
-            else {
-                console.log("open")
-            }
-        }
+        
     </script>
     <script>
         const imgs = Array.from(Array(15).keys());
