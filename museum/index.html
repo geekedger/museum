@@ -26,7 +26,7 @@
                             <a href="#video" class="header-link">Video</a>
                         </li>
                         <li class="header-item">
-                            <a href="#gallery" class="header-link">Gallery</a>
+                            <a href="#inner-gallery" class="header-link">Gallery</a>
                         </li>
                         <li class="header-item">
                             <a href="#tickets" class="header-link">Tickets</a>
@@ -42,11 +42,14 @@
         <section class="welcome dark-section" id="welcome">
             <div class="welcome-container container">
                 <div class="welcome-left">
-                    <h1 class="welcome-title">Welcome<br/>
-                        to the Louvre</h1>
+                    <h1 class="invisible-title">the Louvre</h1>
+                    <h2 class="welcome-title">Welcome<br/>
+                        to the Louvre</h2>
                     <p class="welcome-subtitle">
                         From the castle to the museum
                     </p>
+                    <iframe class="welcome-link" src="https://www.google.com/maps/embed?pb=!4v1632763460980!6m8!1m7!1sCAoSLEFGMVFpcE9WeFpRdVN5M0J4OVRfSHBIXzdGdEJIRFRYdkk2U0YtQTEwb2NU!2m2!1d48.86181593314584!2d2.336681797486702!3f81.55!4f-16.599999999999994!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                    Discover the Louvre</iframe>
                     <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome-link">Discover the Louvre</a>
                 </div> 
                 <div class="welcome-right">
@@ -106,7 +109,7 @@
                         Picture explore
                     </h2>
                     <h3 class="explore-desc">
-                        <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p> 
+                        <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading <br> artist of the Spanish Golden Age.</p> 
                         <p>It was cleaned in 1984 to remove a <span class="text-gold">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p> 
                         <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>  
                     </h3>
@@ -115,7 +118,7 @@
                 <img class="explore-pic" src="./assets/img/explore-pic-before.jpg" alt="Picture explore">    
             </div>
         </section>
-        <section class="section video">
+        <section class="video-section" id="video">
             <div class="video-container container">
                 <div class="video-text-block">
                     <h2 class="video-title">Video journey</h2>
@@ -126,7 +129,7 @@
                 </div>
                 <div class="player">
                     <div class="video-screen">
-                        <img src="./assets/img/video-journey.jpg" alt="player" class="video-screen_image">
+                        <img src="./assets/img/player-thumb.jpg" alt="player" class="video-screen_image">
                         <button class="video-screen_btn">
                         <img src="./assets/svg/play_large.svg" alt="press it">
                         </button>
@@ -219,7 +222,7 @@
                             <div class="elements">
                                 <div class="left">
                                     <h4 for="type">
-                                        Tickets type
+                                        ticket type
                                     </h4>
                                     <label class="ticket-type_container">
                                         <input name="radio" value="permanent" checked="checked" type="radio"/>Permanent exhibition
@@ -239,16 +242,16 @@
                                     <label for="basic">Basic 18+
                                     </label>
                                     <div class="number-input">
-                                        <button class="button">–</button>
-                                        <input id="basic" name="basic" type="number" min="0" max="99" value="1" readonly="readonly">
-                                        <button class="button">+</button>
+                                        <button type="button" class="number-input-button" onclick="this.nextElementSibling.stepDown()">–</button>
+                                        <input id="basic" name="basic" type="number" min="0" max="20" value="1" readonly="readonly">
+                                        <button type="button" class="number-input-button" onclick="this.previousElementSibling.stepUp()">+</button>
                                     </div>
                                     <label for="senior">Senior 65+
                                     </label>
                                     <div class="number-input">
-                                        <button class="button">–</button>
-                                        <input id="senior" name="senior" type="number" min="0" max="99" value="1" readonly="readonly">
-                                        <button class="button">+</button>
+                                        <button type="button" class="number-input-button" onclick="this.previousElementSibling.stepUp()">–</button>
+                                        <input id="senior" name="senior" type="number" min="0" max="20" value="1" readonly="readonly">
+                                        <button type="button" class="number-input-button" onclick="this.previousElementSibling.stepUp()">+</button>
                                     </div>
                                     <div class="total">Total €<span>220</span>
                                     </div>
@@ -301,10 +304,10 @@
                       <a class="footer_nav-item-link" href="#visiting">Explore</a>
                     </li>
                     <li class="footer_nav-item">
-                      <a class="footer_nav-item-link" href="#explore">Explore</a>
+                      <a class="footer_nav-item-link" href="#video">Video</a>
                     </li>
                     <li class="footer_nav-item">
-                      <a class="footer_nav-item-link" href="#video">Video</a>
+                      <a class="footer_nav-item-link" href="#inner-gallery">Gallery</a>
                     </li>
                     <li class="footer_nav-item">
                       <a class="footer_nav-item-link" href="#tickets">Tickets</a>
@@ -335,7 +338,7 @@
         </div>
         <div class="footer-bottom container">
             <p>© 2021</p>
-            <p>The Rolling Scopes School</p>
+            <p class="creator-org">The Rolling Scopes School</p>
             <p>Username</p>
         </div>
     </footer>
@@ -430,6 +433,35 @@
         }
         }
     </script>
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModalSV");
+    
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtnSV");
+    
+            // Get the <span> element that closes the modal
+            var span = document.getElementsById("close-button-sv");
+    
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+            modal.style.display = "block";
+            }
+    
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+            modal.style.display = "none";
+            }
+    
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            }
+        </script>
+    
+
     <script>
         const imgs = Array.from(Array(15).keys());
         const gallery = document.getElementById('gallery');

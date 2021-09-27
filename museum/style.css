@@ -197,14 +197,14 @@ body {
     padding-left: 74px;
     padding-top: 10px;
     background: url(./assets/svg/louvre-logo.svg) no-repeat;
-    background-position: left 7px;
+    background-position: left 6px;
 }
 
 
 .header-nav {
     display: flex;
     flex-wrap: nowrap;
-    gap: 55px;
+    gap: 56px;
 }
 
 .header-link {
@@ -241,7 +241,18 @@ body {
     /* background-position: calc(100% - 20px) calc(100% - 10px); */
     /* background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%); */
     /* background-image: linear-gradient(to right, black 0%, transparent 60%), url(./assets/img/welcome-background.jpg) no-repeat top right; */
-} 
+}
+
+.invisible-title {
+    display: none;
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;  
+}
 
 .welcome-left {
     /* width: 100%;
@@ -278,8 +289,9 @@ body {
 }
 
 .slider-nav {
-    position: relative;
-    bottom: 65px;
+    position: absolute;
+    right: 0;
+    bottom: -65px;
 }
 
 
@@ -360,7 +372,7 @@ body {
 .visiting-cards {
     display: grid;
     grid-template-columns: repeat(3, 6fr );
-    gap: 60px 75px;
+    gap: 74px 60px;
 }
 
 .visiting-card{
@@ -376,7 +388,7 @@ body {
 .card-pic {
     width: 440px;
     height: 285px;
-    margin-bottom: 25px;
+    margin-bottom: 21px;
 }
 
 .visiting-title {
@@ -445,7 +457,7 @@ body {
 }
 
 .explore-desc {
-    padding-top: 75px;
+    padding-top: 105px;
     font-family:'Roboto';
     font-style: normal;
     font-weight: 300;
@@ -488,13 +500,17 @@ body {
 
 /* video */
 
+.video-title {
+    color: var(--font-gold);
+}
+
 .video-section {
-    padding-top: 90px;
+    padding-bottom: 75px;
 }
 
 .video-screen {
     position: relative;
-    margin-bottom: -3px;
+    margin-bottom: -5px;
 }
 .video-screen_btn {
     position: absolute;
@@ -522,7 +538,7 @@ body {
     }
     
 .video-play {
-    padding-left: 25px;
+    padding-left: 31px;
     padding-right: 50px;
     
 }
@@ -608,7 +624,7 @@ margin: 75px 0;
     height: 2200px;
 }
 .gallery-title {
-    padding: 75px 0;
+    padding: 74px 0;
     font-family: 'Forum';
     font-weight: 400;
     font-style: normal;
@@ -638,8 +654,8 @@ margin: 75px 0;
     height: 3100px;
     display: flex;
     flex-flow: column wrap;
-    row-gap: 36px;
-    column-gap: 24px;
+    row-gap: 20px;
+    column-gap: 33px;
 }
 
 .picture-inner-container div:nth-child(3) {
@@ -695,7 +711,7 @@ margin: 75px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 75px;
+    padding-bottom: 70px;
 }
 .ticket-form {
     width: 660px;
@@ -712,9 +728,9 @@ margin: 75px 0;
     font-style: normal;
     font-weight: 300;
     font-size: 22px;
-    line-height: 26px;
+    line-height: 19px;
     color: #000000;
-    margin-top: 25px;
+    margin-top: 24px;
 
 }
 
@@ -734,6 +750,7 @@ margin: 75px 0;
     color: #000000;
     text-align: left;
     padding-bottom: 25px;
+    text-transform: capitalize;
 }
 
 .left input {
@@ -760,7 +777,7 @@ margin: 75px 0;
     font-size: 28px;
     line-height: 33px;
     color: #000000;
-    padding-bottom: 25px;
+  
 
 } 
 
@@ -788,11 +805,14 @@ margin: 75px 0;
 .total  {
     padding-top: 40px;
     text-align: right;
+    letter-spacing: 1.65px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+
 }
 
 .number-input {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 7px;
     display: flex;
     justify-content: space-between;
     width: 150px;
@@ -812,7 +832,7 @@ margin: 75px 0;
 
 }
 
-.button {
+.number-input-button {
     border: none;
     background: none;
     font-family: Roboto;
@@ -822,6 +842,7 @@ margin: 75px 0;
     line-height: 37px;
     text-align: center;
     color: #000000;
+    margin: 2px 12px -1px 9px;
 }
 
 .actions button {
@@ -1090,7 +1111,7 @@ h5 {
   }
   
   
-  button {
+  /* button {
     height: 50px;
     background: orange;
     border: none;
@@ -1103,7 +1124,7 @@ h5 {
   
   button:hover {
     border: 2px solid black;
-  }
+  } */
 
 /* Modal */
 
@@ -1118,7 +1139,7 @@ h5 {
 
 .contacts-block-text p {
     font-family: Roboto;
-    padding-bottom: 30px;
+    padding-bottom: 41px;
     font-weight: 500;
     font-style: normal;
     font-weight: 500;
@@ -1131,18 +1152,16 @@ h5 {
     font-family: Roboto;
     font-weight: 300;
     font-size: 22px;
-    line-height: 26px;
+    line-height: 29px;
 }
 
 /*footer */
 
 .footer-top {
-    /* height: 265px; */
-    border-bottom-color: #666666;
-    border-bottom-width: 3px;
+    margin-top: -2px;
+    height: 268px; 
     border-bottom: 3px solid #666666 ;
-    padding-top: 75px;
-    padding-bottom: 50px;
+    padding-top: 76px;
 }
     
 .footer-container {
@@ -1151,17 +1170,19 @@ h5 {
   height: 150px;
 }
 .footer-logo {
-  width: 195px;
-  background-position: left top;
-  margin-right: 145px;
+    width: 195px;
+    background-position: left 9px;
+    margin-right: 145px;
+    letter-spacing: 2px;
 }
+
 .footer_nav-items {
-    width: 515px;
+    width: 532px;
     height: 150px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-right: 250px;
+    margin-right: 229px;
     font-family: Roboto;
     font-style: normal;
     font-weight: 200;
@@ -1171,10 +1192,8 @@ h5 {
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: opacity(0.5);
-  
-
-
 }
+
 .footer_nav-item-link {
   text-decoration: none;
  
@@ -1194,7 +1213,7 @@ h5 {
   align-items: flex-end;
   justify-content: flex-end;
   gap: 24px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   
 }
 
@@ -1228,4 +1247,8 @@ h5 {
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: opacity(0.5);
+}
+
+.creator-org {
+    padding-left: 31px;
 }
