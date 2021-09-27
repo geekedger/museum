@@ -994,6 +994,7 @@ margin: 75px 0;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 4;
   }
   
 
@@ -1040,13 +1041,12 @@ margin: 75px 0;
     font-weight: bold;
   }
 
-  .close-button-sv {
+  #close-button-sv {
     position: absolute;
     right: -4px;
     top: -17px;
     font-size: 48px;
-  }
-  
+  } 
   
   .close:hover,
   .close:focus {
@@ -1130,7 +1130,7 @@ h5 {
     font-size: 1.25em;
   }
   
-  /* input, select, textarea { */
+  /* input, select, textarea {
     border-radius: 2px;
     border: 2px solid #777;
     box-sizing: border-box;
@@ -1138,7 +1138,7 @@ h5 {
     font-family: 'Nanum Gothic';
     width: 100%;
     padding: 10px;
-  }
+  } */
   
   div.elem-group.inlined input {
     width: 95%;

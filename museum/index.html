@@ -68,7 +68,7 @@
                     Virtual tour
                 </h2>
                 <div class="visiting-cards">
-                    <a href="https://www.google.com/maps/@48.8606882,2.3356791,3a,90y,328.36h,87.55t/data=!3m7!1e1!3m5!1sAF1QipMZ9YgnArbwEIbTDANeSQYFu9gNqpW_2Sv8FBvY!2e10!3e12!7i4352!8i1815" class="visiting-card">
+                    <a href="!#" type="button" class="visiting-card" id="myBtnRP">
                         <img class="card-pic" src="./assets/img/royal-place.jpg" alt="Royal Palace">
                         <h3 class="visiting-card-underlined">Royal Palace</h3>
                         <p class="visiting-card-desc">360° Virtual Tour</p>Google Street Panorama View
@@ -400,11 +400,10 @@
                                     </div>
                                 </div>
                             </div>
-   
                         </div>
-
                     </div>
-                <div class="form-right"></div>
+                    <div class="form-right">    
+                    </div>
                 </form>
             </div>
         </div>
@@ -435,43 +434,27 @@
         modal.style.display = "none";
         }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-        }
-    </script>
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModalSV");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtnSV");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementById("close-button-sv");
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
+        var modalSV = document.getElementById("myModalSV");
+        var btnSV = document.getElementById("myBtnSV");
+        var spanSV = document.getElementById("close-button-sv");
+        btnSV.onclick = function() {
+            modalSV.style.display = "block";
             return false;
         }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+        spanSV.onclick = function() {
+            modalSV.style.display = "none";
         }
-
-        // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+            if ((event.target !== modalSV || event.target !== modal) && (event.target !== btn || event.target !== btnSV)) {
+                modalSV.style.display = "none";
+                modal.style.display = "none";
+                console.log("close");
+            }
+            else {
+                console.log("open")
+            }
         }
     </script>
-
-
     <script>
         const imgs = Array.from(Array(15).keys());
         const gallery = document.getElementById('gallery');
