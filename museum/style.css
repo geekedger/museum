@@ -294,6 +294,36 @@ body {
     bottom: -65px;
 }
 
+.arrow-left {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 124px;
+    bottom: 57px;
+    transition: 0.6s linear;
+
+}
+
+.arrow-right {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 74px;
+    bottom: 58px;
+    transition: 0.6s linear;
+}
+
+.arrow-left:hover {
+    right: 126px;
+    filter: invert(50%) sepia(7%) saturate(3390%) hue-rotate(356deg)    brightness(100%) contrast(80%);
+  }
+
+  .arrow-right:hover {
+    right: 72px;
+    filter: invert(50%) sepia(7%) saturate(3390%) hue-rotate(356deg)    brightness(100%) contrast(80%);
+  }
+
+
 
 
 /* .welcome-slider{
@@ -977,7 +1007,8 @@ margin: 75px 0;
     width: 1440px;
     height: 845px;
     animation-name: animate;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    z-index: 3;
   }
   
   @keyframes animate {
@@ -1008,6 +1039,14 @@ margin: 75px 0;
     font-size: 28px;
     font-weight: bold;
   }
+
+  .close-button-sv {
+    position: absolute;
+    right: -4px;
+    top: -17px;
+    font-size: 48px;
+  }
+  
   
   .close:hover,
   .close:focus {
@@ -1153,7 +1192,30 @@ h5 {
     font-weight: 300;
     font-size: 22px;
     line-height: 29px;
+
 }
+
+.contacts-block-text li a {
+    padding: 10px 0;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 29px;
+    color: #000;
+    text-decoration: none;
+    transition: 0.5s linear;
+}
+
+.contacts-block-text li a:hover {
+    color: var(--font-gold);
+    filter: opacity(1);
+    
+}
+.contacts-block-text li a:active {
+    color: var(--font-gold);
+}
+
+
 
 /*footer */
 
@@ -1225,12 +1287,14 @@ h5 {
     height: 48px;
     border-radius: 50%;
     border: 1px solid #666666;
-
+    transition: 1s linear;
+    
 }
 
-.social-links img {
-  transition: 1s linear;
-}
+ .social-links a:hover {
+    filter: invert(50%) sepia(7%) saturate(3390%) hue-rotate(356deg)    brightness(100%) contrast(80%);
+  }
+
 
 .footer-bottom {
     height: 125px;

@@ -48,15 +48,16 @@
                     <p class="welcome-subtitle">
                         From the castle to the museum
                     </p>
-                    <iframe class="welcome-link" src="https://www.google.com/maps/embed?pb=!4v1632763460980!6m8!1m7!1sCAoSLEFGMVFpcE9WeFpRdVN5M0J4OVRfSHBIXzdGdEJIRFRYdkk2U0YtQTEwb2NU!2m2!1d48.86181593314584!2d2.336681797486702!3f81.55!4f-16.599999999999994!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-                    Discover the Louvre</iframe>
-                    <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome-link">Discover the Louvre</a>
+                    <a href="#" class="welcome-link" id="myBtnSV">Discover the Louvre</a>
                 </div> 
                 <div class="welcome-right">
                     <div class="welcome-slider"><img src="./assets/img/welcome-background.jpg" alt="slider pic">
                     </div>
                     <div class="slider-nav">
                         <img src="./assets/img/slider-nav.jpg" alt="slider navigation">
+                        <button class="arrow-left"><img src="./assets/svg/arrow-left.svg" alt=""></button>
+                        <button class="arrow-right"><img src="./assets/svg/arrow-right.svg  " alt=""></button>
+                    
                     </div>
                 </div> 
             </div>
@@ -259,9 +260,7 @@
                                 </div>
                             </div>
                             <div class="actions">
-                                <button  type="button" id="myBtn">Buy Now</button>
-
-                                
+                                <button  type="button" id="myBtn">Buy Now</button>               
                             </div>
                         </form>
                     </div>
@@ -282,8 +281,12 @@
                     <p>Palais Royal<br>Musee du Louvre</p>
                     <ul>
                       <li>address: 75001 Paris, France</li>
-                      <li>phone: +33(0) 1 40 20 50 50</li>
-                      <li>mail: info@louvre.fr</li>
+                      <li>
+                        <a href="tel:+330140205050">phone: +33(0) 1 40 20 50 50</a>
+                      </li>
+                      <li>
+                        <a href="mailto:info@louvre.fr">mail: info@louvre.fr</a>  
+                      </li>
                     </ul>
                   </div>
                   <img src="./assets/img/contact-map.png" alt="map">
@@ -362,20 +365,20 @@
                                 <input type="date" id="checkout-date" name="checkout" required>
                               </div>    
                               <div class="elem-group">
-                                <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+                                <input type="text" id="name" name="visitor_name" placeholder="Name" pattern=[A-Z\sa-z]{3,20} required>
                               </div>
                               <div class="elem-group">
-                                <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+                                <input type="email" id="email" name="visitor_email" placeholder="E-mail" required>
                               </div>
                               <div class="elem-group">
-                                <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+                                <input type="tel" id="phone" name="visitor_phone" placeholder="Phone" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
                               </div>
                               <div class="elem-group">
-                                <select id="room-selection" name="room_preference" required>
-                                    <option value="">Choose a Room from the List</option>
-                                    <option value="connecting">Connecting</option>
-                                    <option value="adjoining">Adjoining</option>
-                                    <option value="adjacent">Adjacent</option>
+                                <select id="room-selection" name="room_preference" aria-placeholder="Ticket Type" required>
+                                    <option value="">Choose a ticket</option>
+                                    <option value="connecting">Permanent exibition</option>
+                                    <option value="adjoining">Temporary exibition</option>
+                                    <option value="adjacent">COmbined Admission</option>
                                 </select>
                             </div>
                             <div class="left-bottom">
@@ -385,7 +388,7 @@
                                     <div class="number-input">
                                         <button class="button">–</button>
                                         <input id="basic" name="basic" type="number" min="0" max="20" value="1" readonly="readonly">
-                                        <button class="button">+</button>
+                                        <button type="button" onclick="this.nextElementSibling.stepDown()">+</button>
                                      </div>
                                 </div>
                                 <div class="input-wrapper">
@@ -393,7 +396,7 @@
                                     <div class="number-input">
                                         <button class="button">–</button>
                                         <input id="senior" name="senior" type="number" min="0" max="20" value="1" readonly="readonly">
-                                        <button class="button">+</button>
+                                        <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                                     </div>
                                 </div>
                             </div>
@@ -404,6 +407,12 @@
                 <div class="form-right"></div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div id="myModalSV" class="modal">
+        <div class="modal-content">
+            <span id="close-button-sv">&times;</span>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1632772606634!6m8!1m7!1sCAoSLEFGMVFpcE9WeFpRdVN5M0J4OVRfSHBIXzdGdEJIRFRYdkk2U0YtQTEwb2NU!2m2!1d48.86181593314584!2d2.336681797486702!3f81.96095890410959!4f-17.46301369863012!5f0.4000000000000002" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
     <script>
@@ -433,34 +442,35 @@
         }
         }
     </script>
-        <script>
-            // Get the modal
-            var modal = document.getElementById("myModalSV");
-    
-            // Get the button that opens the modal
-            var btn = document.getElementById("myBtnSV");
-    
-            // Get the <span> element that closes the modal
-            var span = document.getElementsById("close-button-sv");
-    
-            // When the user clicks the button, open the modal 
-            btn.onclick = function() {
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModalSV");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtnSV");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("close-button-sv");
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
             modal.style.display = "block";
-            }
-    
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
+            return false;
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
             modal.style.display = "none";
-            }
-    
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            }
-        </script>
-    
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+
 
     <script>
         const imgs = Array.from(Array(15).keys());
